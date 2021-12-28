@@ -94,11 +94,11 @@ class NotesView extends StatelessWidget {
                           child: ConstrainedBox(
                         constraints: const BoxConstraints(maxHeight: 110),
                         child: Card(
-                          shadowColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            side: const BorderSide(width: 0.1),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          shadowColor: Colors.transparent,
+                          // shape: RoundedRectangleBorder(
+                          // side: const BorderSide(width: 0.04),
+                          // borderRadius: BorderRadius.circular(15),
+                          // ),
                           child: ListTile(
                               title: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -127,7 +127,7 @@ class NotesView extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Text("Play video calls",
                                       style: GoogleFonts.poppins(
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.w600,
                                       ))),
                               Align(
@@ -163,14 +163,29 @@ class NotesView extends StatelessWidget {
                         ),
                       )),
                       ResponsiveRowColumnItem(
+                        child: Row(
+                          children: const [
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                              child: Divider(thickness: 0.2),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                      ResponsiveRowColumnItem(
                           child: ConstrainedBox(
                         constraints: const BoxConstraints(maxHeight: 110),
                         child: Card(
-                          shadowColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            side: const BorderSide(width: 0.1),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          shadowColor: Colors.transparent,
+                          // shape: RoundedRectangleBorder(
+                          // side: const BorderSide(width: 0.04),
+                          // borderRadius: BorderRadius.circular(15),
+                          // ),
                           child: ListTile(
                               title: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -199,7 +214,7 @@ class NotesView extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Text("Product management meeting",
                                       style: GoogleFonts.poppins(
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.w600,
                                       ))),
                               Align(
@@ -243,16 +258,16 @@ class NotesView extends StatelessWidget {
                 rowFit: FlexFit.tight,
                 child: ResponsiveRowColumn(
                   layout: ResponsiveRowColumnType.COLUMN,
-                  columnMainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // columnMainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   columnPadding: const EdgeInsets.all(30),
-                  columnSpacing: 10,
+                  columnSpacing: 25,
                   children: [
-                    ResponsiveRowColumnItem(
-                        child: Image.network(
-                      'https://cdn.dribbble.com/users/1634920/screenshots/14778149/media/c9f9468909b989dc8075a7d5c822ed75.jpg',
-                      width: 200,
-                      height: 200,
-                    )),
+                    // ResponsiveRowColumnItem(
+                    //     child: Image.network(
+                    //   'https://cdn.dribbble.com/users/1828023/screenshots/7111542/media/1dcceef7dc41fc9e6daaeb3f725976ae.png',
+                    //   width: 200,
+                    //   height: 200,
+                    // )),
                     ResponsiveRowColumnItem(
                       child: Align(
                         alignment: Alignment.centerLeft,
@@ -276,22 +291,51 @@ class NotesView extends StatelessWidget {
                     ),
                     ResponsiveRowColumnItem(
                       child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '#ideas #morning #todos',
-                          style: GoogleFonts.poppins(
-                            fontSize: 10,
-                            color: Colors.orange,
-                          ),
-                        ),
-                      ),
+                          alignment: Alignment.centerLeft,
+                          child: Row(
+                            children: [
+                              Transform.scale(
+                                  scale: 0.8,
+                                  child: Chip(
+                                      backgroundColor: Colors.blue[50],
+                                      label: Text('#ideas',
+                                          style: GoogleFonts.poppins(
+                                            color: Colors.orange,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                            letterSpacing: 0.8,
+                                          )))),
+                              Transform.scale(
+                                  scale: 0.8,
+                                  child: Chip(
+                                      backgroundColor: Colors.blue[50],
+                                      label: Text('#learn',
+                                          style: GoogleFonts.poppins(
+                                            color: Colors.orange,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                            letterSpacing: 0.8,
+                                          )))),
+                              Transform.scale(
+                                  scale: 0.8,
+                                  child: Chip(
+                                      backgroundColor: Colors.blue[50],
+                                      label: Text('#coding',
+                                          style: GoogleFonts.poppins(
+                                            color: Colors.orange,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                            letterSpacing: 0.8,
+                                          ))))
+                            ],
+                          )),
                     ),
                     ResponsiveRowColumnItem(
                       child: Text(
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
                         style: GoogleFonts.poppins(
                           color: Colors.black54,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ),
@@ -301,7 +345,7 @@ class NotesView extends StatelessWidget {
                         child: Text(
                           'Morning',
                           style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             fontSize: 14,
                           ),
                         ),
@@ -313,15 +357,15 @@ class NotesView extends StatelessWidget {
                         Transform.scale(
                             scale: 0.6,
                             child: Checkbox(
-                              value: true,
+                              value: false,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(35)),
                               fillColor:
-                                  MaterialStateProperty.all(Colors.orange),
+                                  MaterialStateProperty.all(Colors.orange[400]),
                               checkColor: Colors.white,
                               onChanged: (value) {},
                             )),
-                        Text('setup meeting with wahabz',
+                        Text('setup meeting',
                             style: GoogleFonts.poppins(
                               fontSize: 10,
                               color: Colors.black87,
@@ -333,7 +377,7 @@ class NotesView extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(35)),
                               fillColor:
-                                  MaterialStateProperty.all(Colors.orange),
+                                  MaterialStateProperty.all(Colors.orange[400]),
                               checkColor: Colors.white,
                               onChanged: (value) {},
                             )),
