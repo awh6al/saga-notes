@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:saga/src/hive/notes_schema.dart';
 import 'package:saga/src/notes/notes_view.dart';
+import 'package:path/path.dart' as path;
 
-import '../settings/settings_view.dart';
-
-/// Displays a list of SampleItems.
 class OnboardingView extends StatelessWidget {
   const OnboardingView({
     Key? key,
@@ -59,9 +60,11 @@ class OnboardingView extends StatelessWidget {
         next: Text('next'),
         onSkip: () {},
         onChange: (value) {},
-        onDone: () {
+        onDone: () async {
           Navigator.restorablePushReplacementNamed(
-              context, NotesView.routeName);
+            context,
+            NotesView.routeName,
+          );
         },
       ),
     );
